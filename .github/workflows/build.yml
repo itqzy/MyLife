@@ -1,44 +1,70 @@
-name: Build and Deploy
+name: Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-      with:
-        ref: main
+      # $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+        with:
+          # last edit time
+          fetch-depth: 0
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - name: Build Cache
+        id: build-cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '21'  # 使用 Node.js 21
+      - name: Sharp Deps
+        run: |
+          #sudo apt-get update
+          #sudo apt-get install -y libvips-dev glib2.0-dev --no-install-recommends
 
-    - name: Install Dependencies
-      run: |
-        npm install
+      - run: |
+          cd site
+          make ci
+          cd -
 
-    - name: Build
-      run: |
-        npm run build
+        name: Build
+      - run: cp -r site/build site/tech-build
 
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        git branch -m main  # 将当前分支命名为 main
-        git log             # 查看提交历史
-        git checkout gh-pages || git checkout --orphan gh-pages
-        git rm -rf .
-        mv build/* .
-        rm -r build
-        git add -A
-        git commit -m "Deploy Docusaurus to GitHub Pages"
-        git push -f origin main:gh-pages
+      #- run: echo wener.me > site/build/CNAME
+      - name: Deploy Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: site/build
+          single-commit: true
 
+     # - run: echo www.wener.tech > site/build/CNAME
+      - name: Deploy Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: site/tech-build
+          REPOSITORY_NAME: MyLife/wener.tech
