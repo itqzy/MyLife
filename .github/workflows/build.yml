@@ -53,20 +53,16 @@ jobs:
       - run: |
           #export CXX="$(which g++) $(pkg-config --cflags glib-2.0)"
           #npm install --verbose --platform=linux sharp
-          cd site
           make ci
           cd -
 
         name: Build
-      - run: cp -r site/build site/tech-build
-
-      - run: echo wener.me > site/build/CNAME
       - name: Deploy Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: site/build
+          folder: /build
           single-commit: true
 
       - run: echo www.wener.tech > site/build/CNAME
