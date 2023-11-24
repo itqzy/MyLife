@@ -1,4 +1,5 @@
 name: Build
+
 on:
   push:
     branches: [ master ]
@@ -8,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    # strategy:
+    #   matrix:
+    #     node-version: [ 16.x ]
+
     steps:
       # $GITHUB_WORKSPACE
       - uses: actions/checkout@v3
@@ -17,7 +22,10 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 21
+          node-version: 18
+      # - name: Install PNPM
+      #   run: |
+      #     npm add -g pnpm
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
@@ -43,6 +51,8 @@ jobs:
           #sudo apt-get install -y libvips-dev glib2.0-dev --no-install-recommends
 
       - run: |
+          #export CXX="$(which g++) $(pkg-config --cflags glib-2.0)"
+          #npm install --verbose --platform=linux sharp
           cd site
           make ci
           cd -
@@ -50,7 +60,7 @@ jobs:
         name: Build
       - run: cp -r site/build site/tech-build
 
-
+      - run: echo wener.me > site/build/CNAME
       - name: Deploy Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
@@ -59,11 +69,11 @@ jobs:
           folder: site/build
           single-commit: true
 
-
+      - run: echo www.wener.tech > site/build/CNAME
       - name: Deploy Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: site/tech-build
-          REPOSITORY_NAME: MyLife/wener.tech
+          REPOSITORY_NAME: wenerme/wener.tech
