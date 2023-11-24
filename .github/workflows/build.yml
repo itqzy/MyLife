@@ -30,8 +30,7 @@ jobs:
       run: |
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        echo 'node_modules' >> .gitignore
-        git checkout --orphan gh-pages
+        git checkout gh-pages || git checkout --orphan gh-pages
         git rm -rf .
         mv build/* .
         rm -r build
