@@ -8,20 +8,16 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: '你好！我是Allen👋',
+  tagline: '希望这里的内容可以帮到你！',
   favicon: 'img/favicon.ico',
 
+
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://qimle.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -30,8 +26,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh',
+    locales: ['en', 'zh-Hans'],
   },
 
   presets: [
@@ -74,7 +70,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: '首页',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -84,9 +80,10 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: '知识库',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: '碎碎念', position: 'left' },
+          { to: '/blog', label: '关于我', position: 'left' },
           {
             href: 'https://github.com/itqzy/MyLife',
             label: 'GitHub',
@@ -101,49 +98,57 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: '知识库',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Projects',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+                label: 'MyLife',
+                href: 'https://github.com/itqzy/MyLife',
+              }
             ],
           },
           {
             title: 'More',
             items: [
               {
-                label: 'Blog',
+                label: '关于我',
                 to: '/blog',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/itqzy',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} allen, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
+
+  // 添加本地搜索插件配置
+  themes: [
+    // 其他主题配置
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      ({
+        // 配置选项
+        // 使用 `hashed` 模式有助于长期缓存索引文件。
+        hashed: true,
+        // 如果文档中有中文内容，推荐设置 `language` 为：
+        language: ["en", "zh"],
+      }),
+    ],
+
+  ],
 };
 
 export default config;
