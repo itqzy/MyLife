@@ -1,19 +1,14 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+钓鱼:
+  label: 钓鱼
+  permalink: /钓鱼
+  description: 钓鱼还要写文档？
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+生活:
+  label: 生活
+  permalink: /生活
+  description: 一些记录
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+白日梦:
+  label: 白日梦
+  permalink: /白日梦
+  description: 偶尔做做梦

@@ -83,7 +83,7 @@ const config = {
             label: '知识库',
           },
           { to: '/blog', label: '碎碎念', position: 'left' },
-          { to: '/blog', label: '关于我', position: 'left' },
+          { to: '/AboutMe', label: '关于我', position: 'left' },
           {
             href: 'https://github.com/itqzy/MyLife',
             label: 'GitHub',
@@ -117,7 +117,7 @@ const config = {
             items: [
               {
                 label: '关于我',
-                to: '/blog',
+                to: '/AboutMe',
               },
               {
                 label: 'GitHub',
