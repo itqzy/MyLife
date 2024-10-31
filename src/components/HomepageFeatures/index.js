@@ -4,38 +4,35 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '知识库',
+    Svg: require('@site/static/img/organizing_files2.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        这里汇集了我在开发中积累的<code>知识点</code>与<code>实用技巧</code>，帮助我在项目中快速查找和应用相关技术，持续提升专业技能。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '收藏夹',
+    Svg: require('@site/static/img/a_person_taking_notes.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        这是一个多样化的网站收藏集，包含各类<code>在线服务</code>、<code>有趣的网站</code>等，方便随时找到和探索有用的资源。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '一些思考',
+    Svg: require('@site/static/img/writing_notes.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        在这里，我记录了一些生活与工作的<code>思考</code>和<code>感悟</code>，既有长文分析，也有像朋友圈一样的随手短记，记录心路历程和灵感瞬间。
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

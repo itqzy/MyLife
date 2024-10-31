@@ -1,0 +1,89 @@
+.container {
+    padding: 1.5rem;
+    text-align: center;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        color: #4A4A4A;
+        font-family: fangsong;
+
+    }
+
+    h2 {
+        color: #333;
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        text-align: justify;
+        font-family: fangsong;
+    }
+}
+
+
+
+.category {
+    margin-bottom: 2rem;
+}
+
+
+
+.bookmarksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+}
+
+.bookmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bookmark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    overflow: hidden;
+}
+
+.defaultIcon {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.description {
+    font-size: 0.75rem;
+    color: #666;
+    text-align: center;
+    padding: 0 0.5rem;
+}

@@ -1,0 +1,78 @@
+[
+    {
+        "category": "论坛社区",
+        "name": "v2ex",
+        "url": "https://www.v2ex.com/",
+        "icon": "https://www.v2ex.com/static/icon-192.png",
+        "description": "V2EX 是创意工作者们的社区。"
+    },
+    {
+        "category": "论坛社区",
+        "name": "全球主机交流论坛",
+        "url": "https://hostloc.com/",
+        "icon": "https://hostloc.com/favicon.ico",
+        "description": "MJJ的家园。"
+    },
+    {
+        "category": "论坛社区",
+        "name": "GitHub",
+        "url": "https://github.com/",
+        "icon": "https://github.githubassets.com/favicons/favicon.svg",
+        "description": "全球最大的开源代码托管平台，支持版本控制和协作开发。"
+    },
+    {
+        "category": "论坛社区",
+        "name": "吾爱破解",
+        "url": "https://www.52pojie.cn/",
+        "icon": "https://www.52pojie.cn/favicon.ico",
+        "description": "吾爱破解关注PC软件安全和移动安全领域，致力于软件安全与病毒分析的前沿。"
+    },
+    {
+        "category": "在线服务",
+        "name": "JSON For You",
+        "url": "https://json4u.cn/",
+        "icon": "https://json4u.cn/icon.svg",
+        "description": "超快的 JSON可视化与处理。"
+    },
+    {
+        "category": "在线服务",
+        "name": "Compress JPG",
+        "url": "https://compressjpg.io/zh-CN",
+        "icon": "https://compressjpg.io/favicon.ico",
+        "description": "一个免费在线的图片压缩工具。"
+    },
+    {
+        "category": "在线服务",
+        "name": "photo4you",
+        "url": "https://photo4you.win/",
+        "icon": "https://photo4you.win/favicon.ico",
+        "description": "基于AI，几秒钟内即可制作出身份证照片。"
+    },
+    {
+        "category": "在线服务",
+        "name": "超清分辨率",
+        "url": "https://cappuccino.moe/",
+        "icon": "https://cappuccino.moe/favicon.ico",
+        "description": "拖动或选择图像，然后选择模型和 WebGPU/WebGL 来放大图像。"
+    },
+    {
+        "category": "在线服务",
+        "name": "水印宝",
+        "url": "https://watermark.chiloh.cn/",
+        "icon": "https://watermark.chiloh.cn/assets/favicon.ico",
+        "description": "开源免费的在线添加水印服务。"
+    },
+    {
+        "category": "在线服务",
+        "name": "photo4you",
+        "url": "https://photo4you.win/",
+        "icon": "https://photo4you.win/favicon.ico",
+        "description": "基于AI，几秒钟内即可制作出身份证照片。"
+    },
+    {
+        "category": "有趣网站",
+        "name": "Reddit",
+        "url": "https://www.reddit.com",
+        "description": "社区驱动的社交新闻网站，用户可以分享和讨论内容。"
+    }
+]
