@@ -1,78 +1,122 @@
 [
     {
+        "category": "在线服务",
+        "name": "Notion",
+        "url": "https://www.notion.so/",
+        "description": "Notion 是一个集笔记、任务管理、项目管理、时间管理等多种功能于一体的在线服务。"
+    },
+    {
+        "category": "在线服务",
+        "name": "Follow",
+        "url": "https://app.follow.is/",
+        "description": "RSS信息订阅平台。打破单一平台信息茧房。"
+    },
+    {
+        "category": "在线服务",
+        "name": "GitHub",
+        "url": "https://github.com/",
+        "description": "全球最大的开源代码托管平台。"
+    },
+    {
+        "category": "在线服务",
+        "name": "YouTube",
+        "url": "https://www.youtube.com/",
+        "description": "YouTube是世界上最大的视频分享网站，提供视频分享、视频搜索、视频订阅、视频评论、视频分享等功能。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "ChatGPT",
+        "url": "https://chat.openai.com/",
+        "description": "OpenAI旗下大模型，稳坐第一梯队。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "Claude",
+        "url": "https://claude.ai/",
+        "description": "代码能力很强。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "description": "国产大模型，探索未至之境。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "豆包AI",
+        "url": "https://www.doubao.com/chat/",
+        "description": "抖音旗下的AI大模型，手机APP很好用。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "Suno",
+        "url": "https://suno.com/",
+        "description": "AI歌曲生成平台。"
+    },
+    {
+        "category": "AI大模型",
+        "name": "V0",
+        "url": "https://v0.dev/",
+        "description": "AI前端代码生成平台。"
+    },
+    {
         "category": "论坛社区",
-        "name": "v2ex",
+        "name": "V2EX",
         "url": "https://www.v2ex.com/",
-        "icon": "https://www.v2ex.com/static/icon-192.png",
         "description": "V2EX 是创意工作者们的社区。"
+    },
+    {
+        "category": "论坛社区",
+        "name": "LINUX DO",
+        "url": "https://linux.do/",
+        "description": "真诚、友善、团结、专业，共建你我引以为荣之社区。。"
     },
     {
         "category": "论坛社区",
         "name": "全球主机交流论坛",
         "url": "https://hostloc.com/",
-        "icon": "https://hostloc.com/favicon.ico",
         "description": "MJJ的家园。"
-    },
-    {
-        "category": "论坛社区",
-        "name": "GitHub",
-        "url": "https://github.com/",
-        "icon": "https://github.githubassets.com/favicons/favicon.svg",
-        "description": "全球最大的开源代码托管平台，支持版本控制和协作开发。"
     },
     {
         "category": "论坛社区",
         "name": "吾爱破解",
         "url": "https://www.52pojie.cn/",
-        "icon": "https://www.52pojie.cn/favicon.ico",
-        "description": "吾爱破解关注PC软件安全和移动安全领域，致力于软件安全与病毒分析的前沿。"
+        "description": "致力于软件安全与病毒分析的前沿。"
     },
     {
-        "category": "在线服务",
+        "category": "在线工具",
         "name": "JSON For You",
         "url": "https://json4u.cn/",
-        "icon": "https://json4u.cn/icon.svg",
         "description": "超快的 JSON可视化与处理。"
     },
     {
-        "category": "在线服务",
+        "category": "在线工具",
         "name": "Compress JPG",
         "url": "https://compressjpg.io/zh-CN",
-        "icon": "https://compressjpg.io/favicon.ico",
         "description": "一个免费在线的图片压缩工具。"
     },
     {
-        "category": "在线服务",
-        "name": "photo4you",
-        "url": "https://photo4you.win/",
-        "icon": "https://photo4you.win/favicon.ico",
-        "description": "基于AI，几秒钟内即可制作出身份证照片。"
-    },
-    {
-        "category": "在线服务",
+        "category": "在线工具",
         "name": "超清分辨率",
         "url": "https://cappuccino.moe/",
-        "icon": "https://cappuccino.moe/favicon.ico",
         "description": "拖动或选择图像，然后选择模型和 WebGPU/WebGL 来放大图像。"
     },
     {
-        "category": "在线服务",
+        "category": "在线工具",
         "name": "水印宝",
         "url": "https://watermark.chiloh.cn/",
-        "icon": "https://watermark.chiloh.cn/assets/favicon.ico",
         "description": "开源免费的在线添加水印服务。"
     },
     {
-        "category": "在线服务",
-        "name": "photo4you",
-        "url": "https://photo4you.win/",
-        "icon": "https://photo4you.win/favicon.ico",
-        "description": "基于AI，几秒钟内即可制作出身份证照片。"
+        "category": "有趣网站",
+        "name": "快速涂鸦",
+        "url": "https://quickdraw.withgoogle.com/",
+        "description": "神经网络能学会辨识涂鸦吗？"
     },
     {
         "category": "有趣网站",
-        "name": "Reddit",
-        "url": "https://www.reddit.com",
-        "description": "社区驱动的社交新闻网站，用户可以分享和讨论内容。"
+        "name": "猫猫竞赛",
+        "url": "https://cat.llx.life/",
+        "description": "猫猫竞赛，在线多平台跳跃游戏。"
     }
 ]
