@@ -2,7 +2,7 @@
 
 ## 简单创建一个Node.js项目
 
-通过`npm init -y`可以在当前文件夹生成`package.json`文件来快速创建一个**[Node.js](https://nodejs.org/zh-cn)**项目。
+通过`npm init -y`可以在当前文件夹生成`package.json`文件来快速创建一个[Node.js](https://nodejs.org/zh-cn)项目。
 
 创建好后会生成2个文件和一个目录，`node_modules`、`package-lock.json`、`package.json`。
 
@@ -12,7 +12,7 @@
 
 ## 通过vite构建项目
 
-通过`npm install vite`安装**[vite](https://vitejs.cn/vite5-cn/)**依赖。
+通过`npm install vite`安装[vite](https://vitejs.cn/vite5-cn/)依赖。
 
 然后我们需要修改**package.json**中的**scripts**删除掉`test`这个脚本。
 
@@ -70,8 +70,8 @@
 
 Three,js中有两种相机：
 
-1. **正交投影相机（OrthographicCamera）**这种投影模式下，无论物体距离相机距离远或者近，在最终渲染的图片中物体的大小都保持不变。常用于渲染2D场景或者UI元素
-2. **透视投影相机（PerspectiveCamera）**近大远小，模拟人眼所看到场景。它是3D场景的渲染中用得最普遍的投影模式。 
+1. 正交投影相机（OrthographicCamera）这种投影模式下，无论物体距离相机距离远或者近，在最终渲染的图片中物体的大小都保持不变。常用于渲染2D场景或者UI元素
+2. 透视投影相机（PerspectiveCamera）近大远小，模拟人眼所看到场景。它是3D场景的渲染中用得最普遍的投影模式。 
    - 透视投影相机`PerspectiveCamera`：视锥体
    - 相机距离物体的位置：`.position`
    - 相机镜头对准哪个物体（坐标）：`.lookAt()`
