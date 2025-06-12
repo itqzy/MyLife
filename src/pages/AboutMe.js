@@ -75,14 +75,16 @@ export default function AboutMe() {
                         <div style={{
                             display: 'flex',
                             gap: '1rem',
-                            flexWrap: 'wrap'
+                            flexWrap: 'wrap',
+                            flexDirection: 'column'
                         }}>
-                            <span>📧 邮箱：[您的邮箱]</span>
-                            <span>💼 GitHub：[您的GitHub]</span>
+                            <span>💼 GitHub：<a href="https://github.com/itqzy">itqzy</a></span>
+                            <span>📧 邮箱：allen.coder2017@gmail.com </span>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 }

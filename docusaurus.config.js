@@ -42,11 +42,14 @@ const config = {
           editUrl:
             'https://github.com/itqzy/MyLife/tree/main/',
         },
+        // 设置博客的配置
         blog: {
-          showReadingTime: true,
+          blogSidebarTitle: 'All posts', // 博客侧边栏的标题
+          blogSidebarCount: 'ALL', // 博客侧边栏显示所有文章
+          showReadingTime: true, // 显示阅读时间
           feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
+            type: ['rss', 'atom'], // 博客的格式
+            xslt: true, // 是否使用XSLT
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -132,6 +135,20 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+
+        },
+      },
+      // 设置文档目录的层级
+      themeConfig: {
+        tableOfContents: {
+          minHeadingLevel: 2,
+          maxHeadingLevel: 5,
+        },
       },
     }),
 
