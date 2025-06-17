@@ -78,9 +78,8 @@ export default function AboutMe() {
                             flexWrap: 'wrap',
                             flexDirection: 'column'
                         }}>
-                            <span>💼 GitHub：<a href="https://github.com/itqzy">itqzy</a></span>
+                            {/* <span>💼 GitHub：<a href="https://github.com/itqzy">itqzy</a></span> */}
                             <span>📧 邮箱：allen.coder2017@gmail.com </span>
-
                         </div>
                     </div>
                 </div>
