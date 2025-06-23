@@ -31,6 +31,12 @@
     },
     {
         "category": "AI大模型",
+        "name": "Gemini",
+        "url": "https://gemini.google.com/",
+        "description": "谷歌推出的大模型，图片处理非常厉害。"
+    },
+    {
+        "category": "AI大模型",
         "name": "Claude",
         "url": "https://claude.ai/",
         "description": "语言模型，文本、代码创作能力俱佳。"
