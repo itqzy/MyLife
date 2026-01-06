@@ -133,12 +133,6 @@
     },
     {
         "category": "在线工具",
-        "name": "超清分辨率",
-        "url": "https://cappuccino.moe/",
-        "description": "拖动或选择图像，然后选择模型和 WebGPU/WebGL 来放大图像。"
-    },
-    {
-        "category": "在线工具",
         "name": "水印宝",
         "url": "https://watermark.chiloh.cn/",
         "description": "开源免费的在线添加水印服务。"
