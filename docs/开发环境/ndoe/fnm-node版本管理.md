@@ -111,6 +111,76 @@ winget install Schniz.fnm
      . $PROFILE
      ```
 
+5. 设置通过 注册表 AutoRun 让每次 cmd.exe 启动都自动执行 fnm 初始化脚本。
+
+   - 在你的用户目录（通常是 C:\Users\你的用户名）新建一个文件，命名为 fnm_init.cmd（可以用记事本创建）。
+
+   - 把下面这段内容完整复制进去并保存：
+
+     ```cmd
+     @echo off
+     :: 防止无限循环
+     if not defined FNM_AUTORUN_GUARD (
+         set "FNM_AUTORUN_GUARD=AutorunGuard"
+         FOR /f "tokens=*" %%z IN ('fnm env --use-on-cd') DO CALL %%z
+     )
+     ```
+
+   - 打开 PowerShell（普通用户权限就行，不用管理员） 按 Win + S 搜索 “PowerShell”，打开即可。
+
+   - **粘贴下面这行命令并回车**（会自动设置注册表）：
+
+     ```powershell
+     Set-ItemProperty -Path "HKCU:\Software\Microsoft\Command Processor" -Name "AutoRun" -Value "%USERPROFILE%\fnm_init.cmd"
+     ```
+
+     - 如果出现 
+
+       ```powershell
+       Set-ItemProperty : 找不到路径“HKCU:\Software\Microsoft\Command Processor”，因为该路径不存在。
+       所在位置 行:1 字符: 1
+       ```
+
+       **HKCU:\Software\Microsoft\Command Processor 这个注册表键默认不存在**（这是 Win11 的常见情况），所以直接 Set-ItemProperty 会报路径找不到。
+
+       **解决方法（2 行命令，30 秒搞定）：**
+
+       在你当前的 PowerShell 窗口里，**依次粘贴下面两行命令并回车**：
+
+       ```powershell
+       # 1. 先创建缺失的注册表键（-Force 会自动创建）
+       New-Item -Path "HKCU:\Software\Microsoft\Command Processor" -Force
+       
+       # 2. 设置 AutoRun，让每次 cmd 启动都自动执行你的 fnm_init.cmd
+       Set-ItemProperty -Path "HKCU:\Software\Microsoft\Command Processor" -Name "AutoRun" -Value "$env:USERPROFILE\fnm_init.cmd"
+       ```
+
+       执行完后应该看到类似下面输出（没有报错就成功）：
+
+       ```tex
+           Hive: HKEY_CURRENT_USER\Software\Microsoft
+       
+       Name                           Property
+       ----                           --------
+       Command Processor
+       ```
+
+   - 完全关闭所有 cmd、PowerShell、VS Code、Windows Terminal 等窗口。
+
+   - **重新打开测试**：
+
+     - 直接 Win + R 输入 cmd 回车 → node -v 应该直接显示 v22.11.0
+     - 打开 VS Code → 按 Ctrl + 打开终端（如果默认不是 cmd，就点右下角选 “Command Prompt”）→node -v` 也应该正常
+     - 进入任意项目文件夹，如果有 .node-version 文件，会自动切换版本
+
+   #### 如果以后想撤销（恢复原状）
+
+   在 PowerShell 执行：
+
+   ```powershell
+   Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Command Processor" -Name "AutoRun"
+   ```
+
 ### 常用 fnm 命令
 
 1. **下载并使用指定版本**：
