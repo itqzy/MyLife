@@ -1,7 +1,7 @@
 ---
 slug: hermes-workflow-demo
 title: Hermes Agent 工作流演示
-authors: [itqzy]
+authors: [allen]
 tags: [AI, 工具, 效率]
 description: 演示使用 Hermes Agent 自动生成博客文章并推送到 GitHub 的完整工作流
 ---
