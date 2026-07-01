@@ -1,5 +1,3 @@
-> [!NOTE]
->
 > 原文：https://jt26wzz.com/posts/0013-ai-coding/
 
 ## 写在刚开始
