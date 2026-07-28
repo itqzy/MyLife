@@ -2,7 +2,7 @@
 
 ## 代码层
 
-### `@Autowired` 字段注入 → 构造器注入
+### @Autowired 字段注入 → 构造器注入
 
 ```java
 @Controller
@@ -38,7 +38,7 @@ public class UserService {
  }
  ```
 
-### `@Value`散落配置→ `@ConfigurationProperties`
+### @Value散落配置→ @ConfigurationProperties
 
 一直觉得@Value这个注解不好用，自从知道了@ConfigurationProperties注解后我是再也不喜欢用它了，特别是微服务项目有人在代码中写N个这玩意看到就火大😤 再加上nacos中的N个配置文件，人都找麻了。
 
@@ -78,7 +78,7 @@ public class MailService {
   }
   ```
 
-### `@Transactional` 常见误用
+### @Transactional 常见误用
 
 - **过时/错误原因**：只读操作未优化数据库连接；`private` 方法失效；吞掉 `Exception` 导致不回滚（默认只回滚 `RuntimeException`）。
 
@@ -118,7 +118,7 @@ public class MailService {
 
 
 
-### `System.out.println` → SLF4J + `@Slf4j`
+###  System.out.println → SLF4J +  @Slf4j
 
 经典问题，到底是什么神人会在生产代码里留下这玩意啊！
 
@@ -146,9 +146,7 @@ public class MailService {
   }
   ```
 
-###  `@Resource` / `@Inject` 包路径迁移
-
-对于换包名，刚开始网上骂声一片，我保存中立态度。
+###  @Resource  / @Inject 包路径迁移
 
 - **过时原因**：Jakarta EE 9+ 替换 Java EE，`javax` 包名改为 `jakarta`，否则注入完全失效。
 
@@ -168,7 +166,7 @@ public class MailService {
   private CacheManager cacheManager;
   ```
 
-###  Spring `Assert` 工具类方法重载移除
+###  Spring  Assert 工具类方法重载移除
 
 这个好多人都没用过，其实就是官方小工具，我让AI总结了一下效果如下：
 
@@ -255,7 +253,7 @@ public class MailService {
   LocalDateTime now = LocalDateTime.now();
   ```
 
-### `@MockBean` / `@SpyBean` 逐步废弃
+###  @MockBean / @SpyBean  逐步废弃
 
 无人在意的路边。
 
@@ -285,7 +283,7 @@ public class MailService {
 
 ## 框架层
 
-### `WebSecurityConfigurerAdapter` 继承 → `SecurityFilterChain` Bean
+### WebSecurityConfigurerAdapter 继承 →  SecurityFilterChain Bean
 
 Spring Security这个是真在用，也真要改。这是 Spring Security 最大的 API 变更。如果你从 Spring Boot 2.x 升级到 3.x，代码里还继承 `WebSecurityConfigurerAdapter`，编译都过不了。
 
@@ -321,7 +319,7 @@ Spring Security这个是真在用，也真要改。这是 Spring Security 最大
   }
   ```
 
-### `RestTemplate` → `RestClient`（同步）
+### RestTemplate → RestClient（同步）
 
 无人在意的路边。如果你需要响应式场景，请用 **WebClient**。
 
@@ -346,7 +344,7 @@ Spring Security这个是真在用，也真要改。这是 Spring Security 最大
 
 
 
-### `WebMvcConfigurerAdapter` 继承 → 直接实现接口
+###  WebMvcConfigurerAdapter  继承 → 直接实现接口
 
 - **过时原因**：Java 8 接口支持默认方法，适配器类已无存在必要（Spring 5.0 废弃）。
 
@@ -442,7 +440,7 @@ Spring Framework 6.0 中，尾部斜杠匹配配置选项已废弃，默认值�
 
 ## 生态层
 
-### `javax.*` 全面迁移至 `jakarta.*`
+### javax.* 全面迁移至  jakarta.*
 
 > Spring Boot 3.0 把所有 `javax.*` 包迁移到 `jakarta.*`。这个必须改，不改就编译不通过。
 >
@@ -470,7 +468,7 @@ Spring Framework 6.0 中，尾部斜杠匹配配置选项已废弃，默认值�
   import jakarta.validation.Valid;
   ```
 
-### JUnit 4 `@RunWith(SpringRunner.class)` → JUnit 5 单一注解
+### JUnit 4 @RunWith(SpringRunner.class) → JUnit 5 单一注解
 
 省流：省事了。
 
@@ -491,7 +489,7 @@ Spring Framework 6.0 中，尾部斜杠匹配配置选项已废弃，默认值�
   public class AppTest { ... }
   ```
 
-### 异常处理 → 标准化 `ProblemDetail`（RFC 7807）
+### 异常处理 → 标准化  ProblemDetail（RFC 7807）
 
 这就是Java，连返回值都定义了标准，它真的我哭死😭
 
