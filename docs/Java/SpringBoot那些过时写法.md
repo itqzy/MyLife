@@ -564,7 +564,7 @@ Spring Framework 6.0 中，尾部斜杠匹配配置选项已废弃，默认值�
   </properties>
   ```
 
-### `org.codehaus.groovy` 包迁移至 `org.apache.groovy`
+### org.codehaus.groovy 包迁移至 org.apache.groovy
 
 - **过时原因**：Groovy 项目捐赠给 Apache，groupId 变更。
 
